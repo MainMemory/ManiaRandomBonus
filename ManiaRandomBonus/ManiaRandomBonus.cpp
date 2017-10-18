@@ -5,6 +5,7 @@
 #include "..\mania-mod-loader\ManiaModLoader\include\ManiaModLoader.h"
 #include "..\mod-loader-common\ModLoaderCommon\IniFile.hpp"
 #include <algorithm>
+#include <ctime>
 
 using std::string;
 using std::unordered_map;
@@ -75,6 +76,7 @@ extern "C"
 		std::transform(option.begin(), option.end(), option.begin(), tolower);
 		WriteCall((void*)0x458014, optfuncmap[option]);
 		WriteData<4>((void*)0x458022, 0x90u);
+		srand(_time32(nullptr));
 	}
 
 	__declspec(dllexport) ModInfo ManiaModInfo = { ModLoaderVer, GameVer };
