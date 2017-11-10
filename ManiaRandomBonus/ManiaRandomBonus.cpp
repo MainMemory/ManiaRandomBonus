@@ -74,8 +74,8 @@ extern "C"
 		string option = cfg->getString("", "Mode");
 		delete cfg;
 		std::transform(option.begin(), option.end(), option.begin(), tolower);
-		WriteCall((void*)0x458014, optfuncmap[option]);
-		WriteData<4>((void*)0x458022, 0x90u);
+		WriteCall((void*)0x457E34, optfuncmap[option]);
+		WriteData<4>((void*)0x457E42, 0x90u);
 		srand(_time32(nullptr));
 	}
 
