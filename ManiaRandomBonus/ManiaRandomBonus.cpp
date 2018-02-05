@@ -71,7 +71,7 @@ extern "C"
 		strcpy_s(pathbuf, path);
 		strcat_s(pathbuf, "\\config.ini");
 		const IniFile *cfg = new IniFile(pathbuf);
-		string option = cfg->getString("", "Mode");
+		string option = cfg->getString("", "Mode", "normal");
 		delete cfg;
 		std::transform(option.begin(), option.end(), option.begin(), tolower);
 		WriteCall((void*)0x457E34, optfuncmap[option]);
